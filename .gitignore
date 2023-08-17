@@ -1,1 +1,5 @@
 [Bb]uild/
+[Ex]xtern/apr-1.5.2/
+[Ex]xtern/apr-util-1.5.4/
+[Ex]xtern/apache-log4cxx-0.10.0/
+[Ex]xtern/log4cxx/
