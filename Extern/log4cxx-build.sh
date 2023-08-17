@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # 시간측정
+# sudo apt install bc
 start_time=`date +%s.%N`
 start_time_string=`date`
 
@@ -44,13 +45,16 @@ cd .. \
 && rm -rf apache-log4cxx-0.10.0
 
 # 시간측정
-end_time=`date +%s.%N` 
+end_time=`date +%s.%N`
 end_time_string=`date`
-elapsed_time=`echo "$end_time - $start_time" | bc`
+#elapsed_time=`echo "$end_time - $start_time" | bc`
+elapsed_time=$(echo "$end_time - $start_time" | bc)
 htime=`echo "$elapsed_time/3600" | bc` 
 mtime=`echo "($elapsed_time/60) - ($htime * 60)" | bc` 
 stime=`echo "$elapsed_time - (($elapsed_time/60) * 60)" | bc` 
 
-echo -e "\n\n빌드시작 시간: $start_time_string"
-echo "빌드종료 시간: $end_time_string"
-echo "빌드소요 시간: ${htime} H ${mtime} M ${stime} S"
+echo -e "\n\n=============================================="
+echo "시작시간 : $start_time_string"
+echo "종료시간 : $end_time_string"
+echo "걸린시간 : ${htime} H ${mtime} M ${stime} S"
+echo "=============================================="
