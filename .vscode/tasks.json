@@ -7,6 +7,16 @@
             "label": "log4cxx-build",
             "type": "shell",
             "command": "${workspaceFolder}/Extern/log4cxx-build.sh"
+        },
+        {
+            "label": "log4cxx-install",
+            "type": "shell",
+            "command": "sudo ${workspaceFolder}/Extern/log4cxx-install.sh"
+        },
+        {
+            "label": "log4cxx-uninstall",
+            "type": "shell",
+            "command": "sudo ${workspaceFolder}/Extern/log4cxx-uninstall.sh"
         }
     ]
 }
