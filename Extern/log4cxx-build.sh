@@ -29,7 +29,7 @@ tar -xvzf apr-1.5.2.tar.gz \
 && make \
 && make install
 
-# 3. apr-util 다운로드 및 빌드
+# 3. apr-util 빌드
 cd .. \
 && tar -xvzf apr-util-1.5.4.tar.gz \
 && cd apr-util-1.5.4 \
@@ -37,7 +37,7 @@ cd .. \
 && make \
 && make install
  
-# 4. log4cxx 다운로드 및 빌드
+# 4. log4cxx 빌드
 cd .. \
 && tar -xvzf apache-log4cxx-0.10.0.tar.gz \
 && tar -zxvf patch.tar.gz -C ./apache-log4cxx-0.10.0 \
