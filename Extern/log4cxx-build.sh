@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
 # 필요패키지 (시간측정용)
-# sudo apt install -y bc
+# bc 패키지가 설치되어 있는지 확인
+bc_path=$(which bc)
+if [ -z "$bc_path" ]; then
+    echo -e "명령어 'bc' 을(를) 찾을 수 없습니다. 그러나 다음을 통해 설치할 수 있습니다:\nsudo apt install -y bc"
+    echo -e "시간측정은 무시 됩니다."
+    sleep 2s
+fi
 
 # 시간측정
 start_time=`date +%s.%N`
