@@ -1,0 +1,7 @@
+create liblog4cxx.a
+addlib ./log4cxx/lib/liblog4cxx.a
+addlib ./log4cxx/apr/lib/libapr-1.a
+addlib ./log4cxx/apr/lib/libaprutil-1.a
+addlib ./log4cxx/apr/lib/libexpat.a
+save
+end
