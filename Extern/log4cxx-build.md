@@ -46,7 +46,7 @@ $ cd /tmp
 $ wget https://archive.apache.org/dist/apr/apr-1.5.2.tar.gz
 $ tar -xvzf apr-1.5.2.tar.gz
 $ cd apr-1.5.2
-$ ./configure --prefix=$(pwd)/../log4cxx/apr --enable-static=yes --enable-shared=no 
+$ ./configure CPPFLAGS="-fPIC -Bstatic" --prefix=$(pwd)/../log4cxx/apr --enable-static=yes --enable-shared=no 
 $ make
 $ make install
 
@@ -55,7 +55,7 @@ $ cd ..
 $ wget https://archive.apache.org/dist/apr/apr-util-1.5.4.tar.gz
 $ tar -xvzf apr-util-1.5.4.tar.gz
 $ cd apr-util-1.5.4
-$ ./configure --prefix=$(pwd)/../log4cxx/apr --with-expat=builtin --with-apr=$(pwd)/../log4cxx/apr
+$ ./configure CPPFLAGS="-fPIC -Bstatic" --prefix=$(pwd)/../log4cxx/apr --with-expat=builtin --with-apr=$(pwd)/../log4cxx/apr
 $ make
 $ make install
  
@@ -65,7 +65,7 @@ $ wget https://archive.apache.org/dist/logging/log4cxx/0.10.0/apache-log4cxx-0.1
 $ tar -xvzf apache-log4cxx-0.10.0.tar.gz
 $ tar -zxvf patch.tar.gz -C ./apache-log4cxx-0.10.0
 $ cd apache-log4cxx-0.10.0
-$ ./configure --prefix=$(pwd)/../log4cxx --enable-static=yes --enable-shared=no --with-apr=$(pwd)/../log4cxx/apr --with-apr-util=$(pwd)/../log4cxx/apr
+$ ./configure CPPFLAGS="-fPIC -Bstatic" --prefix=$(pwd)/../log4cxx --enable-static=yes --enable-shared=no --with-apr=$(pwd)/../log4cxx/apr --with-apr-util=$(pwd)/../log4cxx/apr
 $ make
 $ make install
 

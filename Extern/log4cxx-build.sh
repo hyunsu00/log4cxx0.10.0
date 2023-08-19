@@ -25,7 +25,7 @@ rm -rfv log4cxx \
 # 2. apr(Apache Portable Runtime) 빌드
 tar -xvzf apr-1.5.2.tar.gz \
 && cd apr-1.5.2 \
-&& ./configure --prefix=$(pwd)/../log4cxx/apr --enable-static=yes --enable-shared=no \
+&& ./configure CPPFLAGS="-fPIC -Bstatic" --prefix=$(pwd)/../log4cxx/apr --enable-static=yes --enable-shared=no \
 && make \
 && make install
 
@@ -33,7 +33,7 @@ tar -xvzf apr-1.5.2.tar.gz \
 cd .. \
 && tar -xvzf apr-util-1.5.4.tar.gz \
 && cd apr-util-1.5.4 \
-&& ./configure --prefix=$(pwd)/../log4cxx/apr --with-expat=builtin --with-apr=$(pwd)/../log4cxx/apr \
+&& ./configure CPPFLAGS="-fPIC -Bstatic" --prefix=$(pwd)/../log4cxx/apr --with-expat=builtin --with-apr=$(pwd)/../log4cxx/apr \
 && make \
 && make install
  
@@ -42,7 +42,7 @@ cd .. \
 && tar -xvzf apache-log4cxx-0.10.0.tar.gz \
 && tar -zxvf patch.tar.gz -C ./apache-log4cxx-0.10.0 \
 && cd apache-log4cxx-0.10.0 \
-&& ./configure --prefix=$(pwd)/../log4cxx --enable-static=yes --enable-shared=no --with-apr=$(pwd)/../log4cxx/apr --with-apr-util=$(pwd)/../log4cxx/apr \
+&& ./configure CPPFLAGS="-fPIC -Bstatic" --prefix=$(pwd)/../log4cxx --enable-static=yes --enable-shared=no --with-apr=$(pwd)/../log4cxx/apr --with-apr-util=$(pwd)/../log4cxx/apr \
 && make \
 && make install
 
